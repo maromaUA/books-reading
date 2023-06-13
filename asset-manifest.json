@@ -1,16 +1,13 @@
 {
   "files": {
-    "main.css": "/books-reading/static/css/main.073c9b0a.css",
-    "main.js": "/books-reading/static/js/main.9ba02e30.js",
-    "static/js/787.6c456286.chunk.js": "/books-reading/static/js/787.6c456286.chunk.js",
-    "static/media/logo.svg": "/books-reading/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "main.css": "/books-reading/static/css/main.964fdded.css",
+    "main.js": "/books-reading/static/js/main.b1193475.js",
     "index.html": "/books-reading/index.html",
-    "main.073c9b0a.css.map": "/books-reading/static/css/main.073c9b0a.css.map",
-    "main.9ba02e30.js.map": "/books-reading/static/js/main.9ba02e30.js.map",
-    "787.6c456286.chunk.js.map": "/books-reading/static/js/787.6c456286.chunk.js.map"
+    "main.964fdded.css.map": "/books-reading/static/css/main.964fdded.css.map",
+    "main.b1193475.js.map": "/books-reading/static/js/main.b1193475.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.9ba02e30.js"
+    "static/css/main.964fdded.css",
+    "static/js/main.b1193475.js"
   ]
 }
