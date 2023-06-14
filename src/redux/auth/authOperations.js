@@ -27,10 +27,13 @@ export const loginUser = createAsyncThunk(
   'auth/login',
   async (userForm, { rejectWithValue }) => {
     try {
+      console.log("try-userform",userForm)
       const { data } = await loginUserApi(userForm);
+      console.log("data", data)
       token.set(data.accessToken);
       return data;
     } catch (error) {
+      console.log("catch-userform",userForm)
       return rejectWithValue(error.message);
     }
   }
