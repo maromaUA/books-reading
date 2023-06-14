@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
+  addNewBook,
   getAuthUser,
   loginUser,
   logoutUser,
@@ -83,6 +84,17 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.error = payload;
       })
+
+      //================= ADD NEW BOOK===================
+      .addCase(addNewBook.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(addNewBook.fulfilled, state => {
+        return {
+          ...initialState,
+        };
+      })
+
       // ================ GET AUTHORIZED USER =====================
       .addCase(getAuthUser.pending, state => {
         state.isLoading = true;

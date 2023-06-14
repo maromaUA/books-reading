@@ -18,6 +18,12 @@ function App() {
             path="library"
             element={<PrivateRoute component={<Library />} redirectTo="/" />}
           ></Route>
+          <Route
+            path="training"
+            element={
+              <PrivateRoute component={<div>Training</div>} redirectTo="/" />
+            }
+          ></Route>
           <Route path="registration" element={<Registration />}></Route>
           <Route path="*" element={<Navigate to="/" />}></Route>
         </Route>

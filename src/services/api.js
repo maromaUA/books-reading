@@ -36,6 +36,10 @@ export const logoutUserApi = () => {
   return instance.post('/auth/logout').then(res => res);
 };
 
+export const addBookApi = bookForm => {
+  return instance.post('/book', { ...bookForm }).then(res => res);
+};
+
 export const refreshTokenApi = sid => {
   return instance.post('/auth/refresh', { sid }).then(res => res);
 };

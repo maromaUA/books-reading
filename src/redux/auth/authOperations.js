@@ -7,6 +7,7 @@ import {
   refreshTokenApi,
   token,
   getUserInfoApi,
+  addBookApi,
 } from '../../services/api.js';
 
 export const registerUser = createAsyncThunk(
@@ -27,13 +28,13 @@ export const loginUser = createAsyncThunk(
   'auth/login',
   async (userForm, { rejectWithValue }) => {
     try {
-      console.log("try-userform",userForm)
+      console.log('try-userform', userForm);
       const { data } = await loginUserApi(userForm);
-      console.log("data", data)
+      console.log('data', data);
       token.set(data.accessToken);
       return data;
     } catch (error) {
-      console.log("catch-userform",userForm)
+      console.log('catch-userform', userForm);
       return rejectWithValue(error.message);
     }
   }
@@ -54,6 +55,22 @@ export const logoutUser = createAsyncThunk(
   }
 );
 
+export const addNewBook = createAsyncThunk(
+  'auth/book',
+  async (bookForm, { rejectWithValue }) => {
+    try {
+      console.log('try-userform', bookForm);
+      const { data } = await addBookApi(bookForm);
+      console.log('data', data);
+      //token.set(data.accessToken);
+      return data;
+    } catch (error) {
+      console.log('catch-userform', bookForm);
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
 export const getAuthUser = createAsyncThunk(
   'auth/getAuthUser',
   async (_, { getState, rejectWithValue, dispatch }) => {
@@ -62,8 +79,7 @@ export const getAuthUser = createAsyncThunk(
     try {
       const { data } = await getUserInfoApi();
       return data;
-    }
-     catch (error) {
+    } catch (error) {
       setTimeout(() => {
         dispatch(errorHandler({ error, cb: getAuthUser }));
       }, 0);
