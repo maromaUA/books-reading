@@ -1,39 +1,49 @@
-import axios from "axios";
+import axios from 'axios';
 
-const baseUrl = "https://bookread-backend.goit.global/api-docs";
+const baseUrl = 'https://bookread-backend.goit.global';
 
 axios.defaults.baseURL = baseUrl;
 
-export const token = {
-    set(token){
-        axios.defaults.headers.common.Authorization = `Bearer ${token}`
-    },
-    unset(){
-        axios.defaults.headers.common.Authorization = ""  
-    }
-}
+const instance = axios.create({
+  baseURL: baseUrl,
+  headers: {
+    'Content-Type': 'application/json; charset=UTF-8',
+    Accept: 'application/json',
+  },
+});
 
-export const registerUserApi = userForm =>{
-    return axios.post('/auth/register', { ...userForm }).then(res => res);
-}
+export const token = {
+  set(token) {
+    instance.defaults.headers.common.Authorization = `Bearer ${token}`;
+  },
+  unset() {
+    instance.defaults.headers.common.Authorization = '';
+  },
+};
+
+export const registerUserApi = userForm => {
+  return instance.post('/auth/register', { ...userForm }).then(res => res);
+};
 
 export const loginUserApi = userForm => {
-    return axios.post('/auth/login', { ...userForm }).then(res => res);
-  };
+  return instance.post('/auth/login', { ...userForm }).then(res => {
+    console.log(res);
+    return res;
+  });
+};
 
-  export const logoutUserApi = () => {
-    return axios.post('/auth/logout').then(res => res);
-  };
+export const logoutUserApi = () => {
+  return instance.post('/auth/logout').then(res => res);
+};
 
-  export const refreshTokenApi = sid => {
-    return axios.post('/auth/refresh', { sid }).then(res => res);
-  };
+export const refreshTokenApi = sid => {
+  return instance.post('/auth/refresh', { sid }).then(res => res);
+};
 
-  export const googleAuthApi = () => {
-    return axios.get('auth/google').then(res => res);
-  };
+export const googleAuthApi = () => {
+  return instance.get('auth/google').then(res => res);
+};
 
-  export const getUserInfoApi = () => {
-    return axios.get('/user/books').then(res => res);
-  };
-  
+export const getUserInfoApi = () => {
+  return instance.get('/user/books').then(res => res);
+};
