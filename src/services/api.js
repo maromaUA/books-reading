@@ -40,6 +40,10 @@ export const addBookApi = bookForm => {
   return instance.post('/book', { ...bookForm }).then(res => res);
 };
 
+export const getPlanningApi = () => {
+  return instance.get('/planning').then(res => res);
+};
+
 export const refreshTokenApi = sid => {
   return instance.post('/auth/refresh', { sid }).then(res => res);
 };

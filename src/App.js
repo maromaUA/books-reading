@@ -7,6 +7,7 @@ import Login from './pages/Login/Login';
 import Registration from './pages/Registration/Registration';
 import PrivateRoute from './components/Routes/PrivatRoute';
 import PublicRoute from './components/Routes/PublicRoute';
+import Training from './pages/Training/Training';
 
 function App() {
   return (
@@ -20,9 +21,7 @@ function App() {
           ></Route>
           <Route
             path="training"
-            element={
-              <PrivateRoute component={<div>Training</div>} redirectTo="/" />
-            }
+            element={<PrivateRoute component={<Training />} redirectTo="/" />}
           ></Route>
           <Route path="registration" element={<Registration />}></Route>
           <Route path="*" element={<Navigate to="/" />}></Route>

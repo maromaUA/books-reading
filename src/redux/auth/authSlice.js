@@ -60,6 +60,7 @@ const authSlice = createSlice({
             isLoading: false,
             error: null,
             email: userData.email,
+            name: userData.name,
             currentlyReading: userData.currentlyReading,
             goingToRead: userData.goingToRead,
             finishedReading: userData.finishedReading,
@@ -89,10 +90,8 @@ const authSlice = createSlice({
       .addCase(addNewBook.pending, state => {
         state.isLoading = true;
       })
-      .addCase(addNewBook.fulfilled, state => {
-        return {
-          ...initialState,
-        };
+      .addCase(addNewBook.fulfilled, (state, { payload }) => {
+        state.goingToRead.push(payload);
       })
 
       // ================ GET AUTHORIZED USER =====================
