@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import {
   BooksList,
   ScoreBoardContentDiv,
@@ -11,8 +12,17 @@ import {
   SpanNumber,
   WrapperDivStyled,
 } from './Training.styled';
+import { useDispatch } from 'react-redux';
+import { getPlanning } from '../../redux/training/trainingOperations';
 
 const Training = () => {
+  const dispatch = useDispatch();
+
+  const addHandler = () => {};
+
+  useEffect(() => {
+    dispatch(getPlanning());
+  }, [dispatch]);
   return (
     <WrapperDivStyled>
       <ScoreBoardDiv>
@@ -39,6 +49,7 @@ const Training = () => {
         </ScoreBoardContentDiv>
       </ScoreBoardDiv>
       <BooksList></BooksList>
+      <button onClick={addHandler}>+</button>
     </WrapperDivStyled>
   );
 };

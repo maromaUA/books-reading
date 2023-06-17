@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../redux/auth/authOperations';
 import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
 import { selectIsUserAuthorized } from '../../redux/auth/authSelectors';
 import { Navigate } from 'react-router-dom';
 

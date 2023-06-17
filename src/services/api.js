@@ -44,6 +44,10 @@ export const getPlanningApi = () => {
   return instance.get('/planning').then(res => res);
 };
 
+export const addPlanningApi = () => {
+  return instance.post('/planning').then(res => res);
+};
+
 export const refreshTokenApi = sid => {
   return instance.post('/auth/refresh', { sid }).then(res => res);
 };
