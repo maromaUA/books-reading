@@ -6,7 +6,7 @@ import {
   NavStyled,
   SpanStyled,
   UlStyled,
-  WrapperDivStyled,
+  HeaderStyled,
 } from './Layout.styled';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectAuthName } from '../../redux/auth/authSelectors';
@@ -23,19 +23,21 @@ const Layout = () => {
   console.log('location:', location);
   if (location.pathname === '/' || location.pathname === '/registration') {
     return (
-      <MainStyled>
-        <WrapperDivStyled>
+      <>
+        <HeaderStyled>
           <span>BR</span>
-        </WrapperDivStyled>
-        <Suspense>
-          <Outlet></Outlet>
-        </Suspense>
-      </MainStyled>
+        </HeaderStyled>
+        <MainStyled>
+          <Suspense>
+            <Outlet></Outlet>
+          </Suspense>
+        </MainStyled>
+      </>
     );
   } else {
     return (
-      <MainStyled>
-        <WrapperDivStyled>
+      <>
+        <HeaderStyled>
           <SpanStyled>BR</SpanStyled>
           <NavStyled>
             <UlStyled>
@@ -46,11 +48,13 @@ const Layout = () => {
               <LiStyled onClick={handleLogout}>Logout</LiStyled>
             </UlStyled>
           </NavStyled>
-        </WrapperDivStyled>
-        <Suspense>
-          <Outlet></Outlet>
-        </Suspense>
-      </MainStyled>
+        </HeaderStyled>
+        <MainStyled>
+          <Suspense>
+            <Outlet></Outlet>
+          </Suspense>
+        </MainStyled>
+      </>
     );
   }
 };
