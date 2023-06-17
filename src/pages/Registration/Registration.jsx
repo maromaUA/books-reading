@@ -42,13 +42,15 @@ const Registration = () => {
               type="text"
               onChange={formik.handleChange}
               value={formik.values.name}
+              placeholder="..."
             />
-            <LabelStyled htmlFor="email">Email Address</LabelStyled>
+            <LabelStyled htmlFor="email">Email</LabelStyled>
             <InputStyled
               name="email"
               type="email"
               onChange={formik.handleChange}
               value={formik.values.email}
+              placeholder="your@email.com"
             />
             <LabelStyled htmlFor="password">Password</LabelStyled>
             <InputStyled
@@ -56,15 +58,17 @@ const Registration = () => {
               type="password"
               onChange={formik.handleChange}
               value={formik.values.password}
+              placeholder="..."
             />
-            <LabelStyled htmlFor="confirmPass">Confirm Password</LabelStyled>
+            <LabelStyled htmlFor="confirmPass">Confirm password</LabelStyled>
             <InputStyled
               name="confirmPass"
               type="password"
               onChange={formik.handleChange}
               value={formik.values.confirmPass}
+              placeholder="..."
             />
-            <RegisterBtnStyled type="submit">Registration</RegisterBtnStyled>
+            <RegisterBtnStyled type="submit">Register</RegisterBtnStyled>
             <TextStyled>
               Already have an account?<LinkStyled to="/">Log in</LinkStyled>
             </TextStyled>

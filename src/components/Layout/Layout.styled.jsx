@@ -10,7 +10,7 @@ export const HeaderStyled = styled.header`
   margin-top: 10px;
   display: flex;
   width: 100vw;
-  height: 6.7vh;
+  height: 60px;
   -webkit-box-shadow: 0 4px 6px -6px #222;
   -moz-box-shadow: 0 4px 6px -6px #222;
   box-shadow: 0 4px 6px -6px #222;
