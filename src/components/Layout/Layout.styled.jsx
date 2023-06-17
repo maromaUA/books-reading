@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 
 export const MainStyled = styled.main`
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
 `;
 
-export const WrapperDivStyled = styled.div`
+export const HeaderStyled = styled.header`
   margin-top: 10px;
   display: flex;
   width: 100vw;
