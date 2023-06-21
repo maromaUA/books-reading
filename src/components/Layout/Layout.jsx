@@ -44,7 +44,7 @@ const Layout = () => {
               <LiStyled>Book</LiStyled>
               <LiStyled>Home</LiStyled>
               <LiStyled>|</LiStyled>
-              <LiStyled>{name}</LiStyled>
+              <LiStyled>{name && name.slice(0, 1).toUpperCase()}</LiStyled>
               <LiStyled onClick={handleLogout}>Logout</LiStyled>
             </UlStyled>
           </NavStyled>

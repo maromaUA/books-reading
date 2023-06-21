@@ -80,3 +80,28 @@ export const SpanLabel = styled.span`
 export const BooksList = styled.ul`
   width: 87%;
 `;
+export const ModalHeader = styled.div`
+  width: 280px;
+  height: 60px;
+  background-color: #b1b5c2;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+export const ModalHeaderText = styled.span`
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+`;
+
+export const ModalButton = styled.button`
+  width: 171px;
+  height: 42px;
+  border: 1px solid #242a37;
+  background-color: #f6f7fb;
+  margin-left: auto;
+  margin-right: auto;
+`;
